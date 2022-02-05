@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Feb  3 19:16:34 2022
+# Process ID: 18226
+# Current directory: /home/afrodri/Documents/Digital_II/wp04-2021-2-gr-08/SoC_project/build/nexys4ddr/gateware
+# Command line: vivado -mode batch -source nexys4ddr.tcl
+# Log file: /home/afrodri/Documents/Digital_II/wp04-2021-2-gr-08/SoC_project/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/afrodri/Documents/Digital_II/wp04-2021-2-gr-08/SoC_project/build/nexys4ddr/gateware/vivado.jou
+#-----------------------------------------------------------
+source nexys4ddr.tcl
+# create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/usr/local/lib/python3.8/dist-packages/pythondata_cpu_picorv32-1.0.post153-py3.8.egg/pythondata_cpu_picorv32/verilog/picorv32.v}
+# read_verilog {/home/afrodri/Documents/Digital_II/wp04-2021-2-gr-08/SoC_project/module/verilog/pwm.v}
+# read_verilog {/home/afrodri/Documents/Digital_II/wp04-2021-2-gr-08/SoC_project/module/verilog/infrarrojo.v}
+ERROR: [Common 17-69] Command failed: File '/home/afrodri/Documents/Digital_II/wp04-2021-2-gr-08/SoC_project/module/verilog/infrarrojo.v' does not exist
+INFO: [Common 17-206] Exiting Vivado at Thu Feb  3 19:16:47 2022...

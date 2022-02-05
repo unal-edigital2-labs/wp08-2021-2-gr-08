@@ -1,0 +1,45 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Fri Feb  4 21:33:26 2022
+| Host         : Afrodri-HP-Linux running 64-bit Ubuntu 20.04.3 LTS
+| Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
+| Design       : nexys4ddr
+| Device       : 7a100tcsg324-1
+| Design State : Fully Placed
+-----------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|        Instance       |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| nexys4ddr             |             (top) |       3392 |       3288 |     104 |    0 | 2747 |    134 |      0 |            1 |
+|   (nexys4ddr)         |             (top) |        893 |        877 |      16 |    0 | 1510 |    134 |      0 |            1 |
+|   bloqueultrasonido   | bloqueultrasonido |         54 |         54 |       0 |    0 |   79 |      0 |      0 |            0 |
+|     maquinadeestados0 |  maquinadeestados |          6 |          6 |       0 |    0 |   15 |      0 |      0 |            0 |
+|       divisorfrecme0  |     divisorfrecme |          5 |          5 |       0 |    0 |   13 |      0 |      0 |            0 |
+|       meultrasonido0  |     meultrasonido |          1 |          1 |       0 |    0 |    2 |      0 |      0 |            0 |
+|     ultrasonido0      |       ultrasonido |         48 |         48 |       0 |    0 |   64 |      0 |      0 |            0 |
+|       contador0       |          contador |          9 |          9 |       0 |    0 |   10 |      0 |      0 |            0 |
+|       divisor0        |           divisor |          2 |          2 |       0 |    0 |   16 |      0 |      0 |            0 |
+|       divisorfrec0    |       divisorfrec |          5 |          5 |       0 |    0 |   13 |      0 |      0 |            0 |
+|       divisorfrecd0   |      divisorfrecd |         15 |         15 |       0 |    0 |   12 |      0 |      0 |            0 |
+|       divisorfrecgen0 |    divisorfrecgen |         15 |         15 |       0 |    0 |   11 |      0 |      0 |            0 |
+|       genpulsos0      |         genpulsos |          2 |          2 |       0 |    0 |    2 |      0 |      0 |            0 |
+|   picorv32            |          picorv32 |       2414 |       2326 |      88 |    0 | 1129 |      0 |      0 |            0 |
+|     (picorv32)        |          picorv32 |       1695 |       1607 |      88 |    0 |  674 |      0 |      0 |            0 |
+|     pcpi_div          | picorv32_pcpi_div |        388 |        388 |       0 |    0 |  200 |      0 |      0 |            0 |
+|     pcpi_mul          | picorv32_pcpi_mul |        331 |        331 |       0 |    0 |  255 |      0 |      0 |            0 |
+|   pwm_1               |               pwm |         33 |         33 |       0 |    0 |   29 |      0 |      0 |            0 |
++-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
