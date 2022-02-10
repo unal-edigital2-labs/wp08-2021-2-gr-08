@@ -31,7 +31,7 @@ Esta sección tiene como objetivo describir los procesos realizados en Litex de 
 
 ## Firmware
 
-En esta sección se explica el código principal main.c con la descripción de las funciones empleadas para el desarrollo del proyecto que permiten el funcionamiento del robot. Para ver información ma detallada aiga el siguiente [enlace](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/firmware)
+En esta sección se explica el código principal main.c con la descripción de las funciones empleadas para el desarrollo del proyecto que permiten el funcionamiento del robot. Para ver información más detallada siga el siguiente [enlace](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/firmware)
 
 ## Alimentación
 
