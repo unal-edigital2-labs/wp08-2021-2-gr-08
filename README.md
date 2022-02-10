@@ -1,9 +1,9 @@
 # Entrega final robot cartógrafo
 ## Electrónica digital II - Grupo 8
 
- ·Andres Felipe Rodriguez Florez 
- ·Nicolas Esteban Gomez Tellez
- ·Eddy Santiago Delgado Caro
+Andres Felipe Rodriguez Florez 
+Nicolas Esteban Gomez Tellez
+Eddy Santiago Delgado Caro
 	
 A continuación se mostrará el proyecto de un robot diseñado en base a una arquitectura de System on a chip, en el que por medio de los datos que proporcionan una serie de periféricos al procesador,le permitirán al robot moverse por medio de un laberinto, mapear su recorrido, detenerse en puntos específicos e identificar algunos aspectos de su entorno.
 
@@ -13,8 +13,8 @@ A continuación se mostrará el proyecto de un robot diseñado en base a una arq
 
 A continuación se presenta una lista de los periféricos que fueron empleados en el desarrollo de este proyecto. Para más información acerca de cada periférico y de su implementación dar click sobre el periférico.
 
-‣[Radar](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/ultrasonido)
-‣[Infrarrojo](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/infrarrojo)
+[Radar](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/ultrasonido)
+[Infrarrojo](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/infrarrojo)
 
 En el siguiente diagrama se puede ver como se conectan los perifereicos y sus correspondientes modulos con el puente Wishbone y a su vez como se hace la conexión del mismo con el procesador y la memoria.
 
