@@ -35,7 +35,12 @@ En esta sección se explica el código principal main.c con la descripción de l
 
 ## Alimentación
 
-Para alimentar el robot se hace uso de una powerbank debido a que la FPGA siempre debe estar conectada a una fuente para que el hardware y el firmware cargado en esta no se pierda. Los motores se alimentan por separado y para ello se utilizan pilas.
+Para alimentar el robot se hace uso de una powerbank a la que la FPGA siempre debe estar conectada a una fuente para que el hardware y el firmware cargado en esta no se pierda. Los motores se alimentan por separado y para ello se utilizan 8 pilas AAA.
+
+<p align="center">
+  <img src="/Imagenes/powerbank.jpeg" align="center">
+</p>
+
 
 ## Problemas presentados 
 
