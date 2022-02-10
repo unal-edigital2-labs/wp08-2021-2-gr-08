@@ -14,6 +14,7 @@ from litex.soc.interconnect.csr import *
 from litex.soc.cores import gpio
 from module import rgbled
 from module import sevensegment
+from module import camara
 from module import vgacontroller
 from module import pwm
 from module import infrarrojo
@@ -35,7 +36,14 @@ class BaseSoC(SoCCore):
 			
 		#pwm
 		platform.add_source("module/verilog/pwm.v")
-		
+
+		#Camara
+		platform.add_source("module/verilog/Analyzer.v")
+		platform.add_source("module/verilog/test_cam.v")
+		platform.add_source("module/verilog/cam_read.v")
+		platform.add_source("module/verilog/buffer_ram_dp.v")
+		platform.add_source("module/verilog/clk24_25_nexys4.v")
+
 		#infrarrojo
 		platform.add_source("module/verilog/infrarrojo.v")
 		
@@ -82,7 +90,16 @@ class BaseSoC(SoCCore):
 		
 		SoCCore.add_csr(self,"ledRGB_2")
 		self.submodules.ledRGB_2 = rgbled.RGBLed(platform.request("ledRGB",2))
-		
+
+		# camara
+		SoCCore.add_csr(self, "camara_cntrl")
+		# SoCCore.add_interrupt(self,"camara_cntrl")
+		cam_data_in = Cat(*[platform.request("CAM_px_data", i) for i in range(8)])
+		self.submodules.camara_cntrl = camara.Camara(platform.request("CAM_xclk"), platform.request("CAM_pclk"),
+													 platform.request("CAM_href"), platform.request("CAM_vsync"),
+													 cam_data_in)
+
+
 		#pwm
 		SoCCore.add_csr(self,"pwm_cntrl")
 		self.submodules.pwm_cntrl = pwm.Pwm(platform.request("pwm"))
