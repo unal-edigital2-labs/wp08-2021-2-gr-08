@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="a71eafcb31c7426eb2148081a9215502"/>
+    <Option Name="Id" Val="7ac8189dff004074aadf4073a23c4dee"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>

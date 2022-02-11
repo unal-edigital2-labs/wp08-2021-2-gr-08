@@ -81,16 +81,13 @@ static void help(void)
 	puts("pwm                             - pwm test");
 	puts("ultra                           - ultra test");
 	puts("infra			       - infra test");
-<<<<<<< HEAD
 	puts("motor			       - motor test");
 	puts("adelante			       - adelante");
 	puts("atras			       - atras");
 	puts("derecha			       - girar derecha");
 	puts("izquierda			       - girar izquierda");
-=======
 	puts("camara			       - camara test");
 
->>>>>>> 4bc95eedbb682e90fee6228be29592ca910f6fd9
 }
 
 static void reboot(void)
@@ -162,31 +159,32 @@ static void switch_test(void)
 
 static void pwm_test(void)
 {
-    unsigned int period = 2000000;
-    unsigned int dutty = 0;
-    unsigned int enable = 1;
+	unsigned int period = 2000000;
+	unsigned int dutty = 0;
+	unsigned int enable = 1;
+	
+	pwm_cntrl_enable_write(enable);
+	printf("Test de pwm ... se interrumpe con el boton 1\n");
+	
+	delay_ms(10);
 
-    pwm_cntrl_enable_write(enable);
-    printf("Test de pwm ... se interrumpe con el boton 1\n");
 
-    delay_ms(10);
-
-
-    dutty = 40000;
-    pwm_cntrl_period_write(period);
-    pwm_cntrl_dutty_write(dutty);
-    delay_ms(1000);
-
-    dutty = 60000;
-    pwm_cntrl_period_write(period);
-    pwm_cntrl_dutty_write(dutty);
-    delay_ms(1000);
-
-    dutty = 250000;
-    pwm_cntrl_period_write(period);
-    pwm_cntrl_dutty_write(dutty);
-    delay_ms(1000);
-
+	dutty = 40000;
+	pwm_cntrl_period_write(period);
+	pwm_cntrl_dutty_write(dutty);
+	delay_ms(1000);
+	
+	dutty = 145000;
+	pwm_cntrl_period_write(period);
+	pwm_cntrl_dutty_write(dutty);
+	delay_ms(1000);
+	
+	dutty = 250000;
+	pwm_cntrl_period_write(period);
+	pwm_cntrl_dutty_write(dutty);
+	delay_ms(1000);
+	
+	
 }
 
 static void ultra_test(void)
@@ -225,9 +223,7 @@ static void ultra_test(void)
 }
 
 static void infra_test(void){
-
 	printf("Test de infra ... se interrumpe con el boton 1\n");
-
 	while(!(buttons_in_read()&1)) {
 		printf("Infrarrojo: %lu \n",infra_cntrl_infras2_read());
 		delay_ms(1000);
@@ -240,7 +236,6 @@ static void adelante(void)
     printf("Test del motor... se interrumpe con el botton 1\n");
         while(!(buttons_in_read()&1)) {
 	motor_cntrl_estado_write(12); // 1 derecha adelante
-	delay_ms(2000);
 	}
 }
 
@@ -249,7 +244,6 @@ static void derecha(void)
     printf("Test del motor... se interrumpe con el botton 1\n");
         while(!(buttons_in_read()&1)) {
 	motor_cntrl_estado_write(10); // 1 derecha adelante
-	delay_ms(2000);
 	}
 }
 
@@ -258,7 +252,6 @@ static void izquierda(void)
     printf("Test del motor... se interrumpe con el botton 1\n");
         while(!(buttons_in_read()&1)) {
 	motor_cntrl_estado_write(9); // 1 derecha adelante
-	delay_ms(2000);
 	}
 }
 
@@ -267,37 +260,11 @@ static void atras(void)
     printf("Test del motor... se interrumpe con el botton 1\n");
         while(!(buttons_in_read()&1)) {
 	motor_cntrl_estado_write(3); // 1 derecha adelante
-	delay_ms(2000);
+
 	}
 }
 
 
-static void girarD(void){
-	
-	unsigned int estado = 0x0;
-	delay_ms(50);
-	
-	estado = 0x3;
-	motor_cntrl_estado_write(estado);
-	delay_ms(2000);
-	estado = 0x0;
-	motor_cntrl_estado_write(estado);
-	delay_ms(50);
-}
-
-static void girarI(void){
-	
-	unsigned int tiempo = 900;
-	unsigned int estado = 0x0;
-	delay_ms(50);
-	
-	estado = 0x4;
-	motor_cntrl_estado_write(estado);
-	delay_ms(tiempo);
-	estado = 0x0;
-	motor_cntrl_estado_write(estado);
-	delay_ms(50);
-}
 
 
 
@@ -337,42 +304,7 @@ static void rgbled_test(void)
 
 
 }
-int camara(void){
 
-	unsigned int col = 0;
-	unsigned int done = 0;
-	unsigned int error = 0;
-
-	printf("Test de camara ... se interrumpe con el boton 1\n");
-
-		col = camara_cntrl_res_read();
-		done = camara_cntrl_done_read();
-		error = camara_cntrl_error_read();
-		if(done){
-			if(!error){
-				switch (col){
-	 				case 1: printf("Azul \n"); break;
-	 				case 2: printf("Verde \n"); break;
-	 				case 4: printf("Rojo \n"); break;
-	 				case 7: printf("Ninguno \n"); break;
-				}
-			}
-		}
-	camara_cntrl_init_write(1);
-	delay_ms(10);
-	camara_cntrl_init_write(0);
-	delay_ms(1000);
-
-	return col;
-
-}
-
-static void camara_test(){
-unsigned int c = camara();
-delay_ms(10);
-uart3_write(c);
-
-}
 
 static void vga_test(void)
 {
@@ -413,22 +345,13 @@ static void console_service(void)
 		display_test();
 	else if(strcmp(token, "rgbled") == 0)
 		rgbled_test();
-	else if(strcmp(token, "camara") == 0)
-		camara();
 	else if(strcmp(token, "vga") == 0)
 		vga_test();
-	else if(strcmp(token, "pwm") == 0)
-<<<<<<< HEAD
-        	pwm_test();
 	else if(strcmp(token, "ultra") == 0)
          	ultra_test();
+	else if(strcmp(token, "pwm") == 0)
+        	pwm_test();
 	else if(strcmp(token, "infra") == 0)
-=======
-        pwm_test();
-    else if(strcmp(token, "ultra") == 0)
-        ultra_test();
-    else if(strcmp(token, "infra") == 0)
->>>>>>> 4bc95eedbb682e90fee6228be29592ca910f6fd9
 	 	infra_test();
 	else if(strcmp(token, "adelante") == 0)
 	 	adelante();
