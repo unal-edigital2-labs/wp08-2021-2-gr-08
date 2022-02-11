@@ -1,10 +1,11 @@
 # Entrega final robot cartógrafo
+
 ## Electrónica digital II - Grupo 8
 
-- Andres Felipe Rodriguez Florez 
+- Andres Felipe Rodriguez Florez
 - Nicolas Esteban Gomez Tellez
 - Eddy Santiago Delgado Caro
-	
+
 A continuación se mostrará el proyecto de un robot diseñado en base a una arquitectura de System on a chip, en el que por medio de los datos que proporcionan una serie de periféricos al procesador,le permitirán al robot moverse por medio de un laberinto, mapear su recorrido, detenerse en puntos específicos e identificar algunos aspectos de su entorno.
 
 ------------imagen-------------
@@ -23,12 +24,15 @@ En el siguiente diagrama se puede ver como se conectan los perifereicos y sus co
   <img src="/Imagenes/esquema1.png" align="center">
 </p>
 
+Para este diagrama, realizamos la asignación de memoria, la cual se encuentra detallado en Soc_MemoryMap.csv, y en la siguiente imagen se encuentra la base de memoria para cada periferico.
 
-## SoC    
+<p align="center">
+  <img src="/Imagenes/base_memoria.png" align="center">
+</p>
+
+## SoC
 
 Esta sección tiene como objetivo describir los procesos realizados en Litex de tal manera que los módulos de los periféricos usados se pudieran integrar de manera correcta con el procesador y el bus Wishbone. De los archivos proporcionados en clase se obtiene un procesador picoRV32 y un bus Wishbone y por haciendo uso de Litex se crea el hardware del procesador en la FPGA. en este proyecto se hizo uso tanto de Verilog como de Python para la implementacion de algunos peifericos haciendo uso de Litex. [Detalles del SoC](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project).
-
-
 
 ## Firmware
 
@@ -42,8 +46,4 @@ Para alimentar el robot se hace uso de una powerbank a la que la FPGA siempre de
   <img src="/Imagenes/powerbank.jpeg" align="center">
 </p>
 
-
-## Problemas presentados 
-
-
-
+## Problemas presentados
