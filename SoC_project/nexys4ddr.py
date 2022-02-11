@@ -121,6 +121,29 @@ _io = [
         Subsignal("rx", Pins("C4")),
         IOStandard("LVCMOS33"),
     ),
+    # UART_1 PMod JC
+
+    ("uart1", 0,
+     Subsignal("tx", Pins("G6")),
+     Subsignal("rx", Pins("E6")),
+     IOStandard("LVCMOS33"),
+     ),
+
+    # UART_2 PMod JC
+
+    ("uart2", 0,
+     Subsignal("tx", Pins("G16")),
+     Subsignal("rx", Pins("H14")),
+     IOStandard("LVCMOS33"),
+     ),
+
+    # UART_3 PMod JB
+
+    ("uart3", 0,
+     Subsignal("tx", Pins("H1")),
+     Subsignal("rx", Pins("G1")),
+     IOStandard("LVCMOS33"),
+     ),
 
     ("ddram", 0,
         Subsignal("a", Pins(

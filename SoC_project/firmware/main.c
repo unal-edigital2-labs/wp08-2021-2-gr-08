@@ -9,6 +9,9 @@
 
 #include "delay.h"
 #include "display.h"
+#include "uart1.h"
+#include "uart2.h"
+#include "uart3.h"
 
 static char *readstr(void)
 {
@@ -80,13 +83,14 @@ static void help(void)
 	puts("vga                             - vga test");
 	puts("pwm                             - pwm test");
 	puts("ultra                           - ultra test");
-	puts("infra			       - infra test");
-	puts("motor			       - motor test");
-	puts("adelante			       - adelante");
-	puts("atras			       - atras");
-	puts("derecha			       - girar derecha");
-	puts("izquierda			       - girar izquierda");
-	puts("camara			       - camara test");
+	puts("uart1			                  - uart1 test");
+	puts("infra			                  - infra test");
+	puts("motor			                  - motor test");
+	puts("adelante			              - adelante");
+	puts("atras			                  - atras");
+	puts("derecha			              - girar derecha");
+	puts("izquierda			              - girar izquierda");
+	puts("camara			              - camara test");
 
 }
 
@@ -154,6 +158,23 @@ static void switch_test(void)
 			leds_out_write(temp);
 			temp2 = temp;
 		}
+	}
+}
+
+static void uart1_test(void){
+	printf("Test de la uart 1, debe poner en corto el pon RX Tx de la la UART1.\n");
+
+	printf("se envia el caracter A por la uart 1  y al estar en loopback se recibe el caracter  y se retrasmite por la uart 0\n");
+	printf("se interrumpe con el botton 1\n");
+	unsigned int matriz[2][2]={{1,2},{3,4}};
+	unsigned int dato = 0;
+	while(!(buttons_in_read()&1)) {
+
+	dato = uart1_read();
+	if(dato == 97)
+	printf("listo\n");
+	else printf("no listo\n");
+	delay_ms(500);
 	}
 }
 
