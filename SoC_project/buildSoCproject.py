@@ -115,6 +115,6 @@ class BaseSoC(SoCCore):
 
 # Build --------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-	builder = Builder(BaseSoC())
+	builder = Builder(BaseSoC(),csr_csv="Soc_MemoryMap.csv")
 	builder.build()
 
