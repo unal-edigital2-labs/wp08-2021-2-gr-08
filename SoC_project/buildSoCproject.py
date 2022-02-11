@@ -10,6 +10,7 @@ import nexys4ddr as tarjeta
 from litex.soc.integration.soc_core import *
 from litex.soc.integration.builder import *
 from litex.soc.interconnect.csr import *
+from litex.soc.integration.soc import *
 
 from litex.soc.cores import gpio
 from module import rgbled
@@ -18,6 +19,7 @@ from module import vgacontroller
 from module import pwm
 from module import infrarrojo
 from module import ultrasonido
+from module import motores
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
@@ -51,6 +53,9 @@ class BaseSoC(SoCCore):
 		platform.add_source("module/verilog//ultrasonido/maquinadeestados.v")
 		platform.add_source("module/verilog//ultrasonido/meultrasonido.v")
 		platform.add_source("module/verilog//ultrasonido/ultrasonido.v")
+		
+		#Motores
+		platform.add_source("module/verilog/Motor.v")
         	
 		# Clock Reset Generation
 		self.submodules.crg = CRG(platform.request("clk"), ~platform.request("cpu_reset"))
@@ -96,6 +101,11 @@ class BaseSoC(SoCCore):
 		infras_in = Cat(*[platform.request("infras", i) for i in range(5)])
 		self.submodules.infra_cntrl = infrarrojo.Infrarrojo(infras_in)
 
+		#motores
+		SoCCore.add_csr(self,"motor_cntrl")
+		motor_out = Cat(*[platform.request("pin", i) for i in range(4)])
+		self.submodules.motor_cntrl = motores.Motores(motor_out)
+		
 		# VGA
 		SoCCore.add_csr(self,"vga_cntrl")
 		vga_red = Cat(*[platform.request("vga_red", i) for i in range(4)])

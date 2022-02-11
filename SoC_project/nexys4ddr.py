@@ -28,6 +28,12 @@ _io = [
     ("trigg", 0, Pins("G13"), IOStandard("LVCMOS33")),
     ("ECHO",  0, Pins("H16"), IOStandard("LVCMOS33")),
     
+    #Motores - JB
+    ("pin",  0, Pins("H2"), IOStandard("LVCMOS33")),
+    ("pin",  1, Pins("G4"), IOStandard("LVCMOS33")),
+    ("pin",  2, Pins("G2"), IOStandard("LVCMOS33")),
+    ("pin",  3, Pins("F3"), IOStandard("LVCMOS33")),
+    
     #INFRAS - JC
     ("infras", 0, Pins("K1"), IOStandard("LVCMOS33")),
     ("infras", 1, Pins("F6"), IOStandard("LVCMOS33")),

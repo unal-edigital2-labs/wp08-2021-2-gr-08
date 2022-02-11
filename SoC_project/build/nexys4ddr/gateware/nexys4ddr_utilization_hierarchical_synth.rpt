@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Fri Feb  4 21:32:08 2022
+| Date         : Thu Feb 10 18:07:07 2022
 | Host         : Afrodri-HP-Linux running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_synth.rpt
 | Design       : nexys4ddr
@@ -21,8 +21,9 @@ Table of Contents
 +-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |        Instance       |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| nexys4ddr             |             (top) |       3299 |       3195 |     104 |    0 | 2727 |    134 |      0 |            1 |
-|   (nexys4ddr)         |             (top) |        780 |        764 |      16 |    0 | 1490 |    134 |      0 |            1 |
+| nexys4ddr             |             (top) |       3309 |       3205 |     104 |    0 | 2737 |    134 |      0 |            1 |
+|   (nexys4ddr)         |             (top) |        780 |        764 |      16 |    0 | 1496 |    134 |      0 |            1 |
+|   Motor               |             Motor |          2 |          2 |       0 |    0 |    4 |      0 |      0 |            0 |
 |   bloqueultrasonido   | bloqueultrasonido |         54 |         54 |       0 |    0 |   79 |      0 |      0 |            0 |
 |     maquinadeestados0 |  maquinadeestados |          6 |          6 |       0 |    0 |   15 |      0 |      0 |            0 |
 |       divisorfrecme0  |     divisorfrecme |          5 |          5 |       0 |    0 |   13 |      0 |      0 |            0 |
@@ -34,8 +35,8 @@ Table of Contents
 |       divisorfrecd0   |      divisorfrecd |         15 |         15 |       0 |    0 |   12 |      0 |      0 |            0 |
 |       divisorfrecgen0 |    divisorfrecgen |         15 |         15 |       0 |    0 |   11 |      0 |      0 |            0 |
 |       genpulsos0      |         genpulsos |          2 |          2 |       0 |    0 |    2 |      0 |      0 |            0 |
-|   picorv32            |          picorv32 |       2432 |       2344 |      88 |    0 | 1129 |      0 |      0 |            0 |
-|     (picorv32)        |          picorv32 |       1713 |       1625 |      88 |    0 |  674 |      0 |      0 |            0 |
+|   picorv32            |          picorv32 |       2440 |       2352 |      88 |    0 | 1129 |      0 |      0 |            0 |
+|     (picorv32)        |          picorv32 |       1721 |       1633 |      88 |    0 |  674 |      0 |      0 |            0 |
 |     pcpi_div          | picorv32_pcpi_div |        388 |        388 |       0 |    0 |  200 |      0 |      0 |            0 |
 |     pcpi_mul          | picorv32_pcpi_mul |        331 |        331 |       0 |    0 |  255 |      0 |      0 |            0 |
 |   pwm_1               |               pwm |         33 |         33 |       0 |    0 |   29 |      0 |      0 |            0 |

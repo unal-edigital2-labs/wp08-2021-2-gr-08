@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/build/nexys4ddr/gateware/nexys4ddr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="e44bd6882fb54614be07a893f43c6f1a"/>
+    <Option Name="Id" Val="a71eafcb31c7426eb2148081a9215502"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -150,6 +150,13 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../../../module/verilog/ultrasonido/ultrasonido.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../module/verilog/Motor.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

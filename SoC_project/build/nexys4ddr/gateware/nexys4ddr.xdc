@@ -221,6 +221,22 @@ set_property IOSTANDARD LVCMOS33 [get_ports {infras3}]
 set_property LOC J3 [get_ports {infras4}]
 set_property IOSTANDARD LVCMOS33 [get_ports {infras4}]
 
+# pin:0
+set_property LOC H2 [get_ports {pin0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pin0}]
+
+# pin:1
+set_property LOC G4 [get_ports {pin1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pin1}]
+
+# pin:2
+set_property LOC G2 [get_ports {pin2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pin2}]
+
+# pin:3
+set_property LOC F3 [get_ports {pin3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pin3}]
+
 # vga_red:0
 set_property LOC A3 [get_ports {vga_red0}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_red0}]

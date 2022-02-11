@@ -81,6 +81,11 @@ static void help(void)
 	puts("pwm                             - pwm test");
 	puts("ultra                           - ultra test");
 	puts("infra			       - infra test");
+	puts("motor			       - motor test");
+	puts("adelante			       - adelante");
+	puts("atras			       - atras");
+	puts("derecha			       - girar derecha");
+	puts("izquierda			       - girar izquierda");
 }
 
 static void reboot(void)
@@ -225,6 +230,71 @@ static void infra_test(void){
 
 }
 
+static void adelante(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(12); // 1 derecha adelante
+	delay_ms(2000);
+	}
+}
+
+static void derecha(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(10); // 1 derecha adelante
+	delay_ms(2000);
+	}
+}
+
+static void izquierda(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(9); // 1 derecha adelante
+	delay_ms(2000);
+	}
+}
+
+static void atras(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(3); // 1 derecha adelante
+	delay_ms(2000);
+	}
+}
+
+
+static void girarD(void){
+	
+	unsigned int estado = 0x0;
+	delay_ms(50);
+	
+	estado = 0x3;
+	motor_cntrl_estado_write(estado);
+	delay_ms(2000);
+	estado = 0x0;
+	motor_cntrl_estado_write(estado);
+	delay_ms(50);
+}
+
+static void girarI(void){
+	
+	unsigned int tiempo = 900;
+	unsigned int estado = 0x0;
+	delay_ms(50);
+	
+	estado = 0x4;
+	motor_cntrl_estado_write(estado);
+	delay_ms(tiempo);
+	estado = 0x0;
+	motor_cntrl_estado_write(estado);
+	delay_ms(50);
+}
+
+
 
 static void rgbled_test(void)
 {
@@ -307,10 +377,18 @@ static void console_service(void)
 		vga_test();
 	else if(strcmp(token, "pwm") == 0)
         	pwm_test();
-        else if(strcmp(token, "ultra") == 0)
+	else if(strcmp(token, "ultra") == 0)
          	ultra_test();
-        else if(strcmp(token, "infra") == 0)
+	else if(strcmp(token, "infra") == 0)
 	 	infra_test();
+	else if(strcmp(token, "adelante") == 0)
+	 	adelante();
+	else if(strcmp(token, "izquierda") == 0)
+		izquierda();
+	else if(strcmp(token, "derecha") == 0)
+		derecha();
+	else if(strcmp(token, "atras") == 0)
+		atras();
 	prompt();
 }
 
@@ -322,7 +400,7 @@ int main(void)
 #endif
 	uart_init();
 
-	puts("\nSoC - RiscV project UNAL 2020-2-- CPU testing software built "__DATE__" "__TIME__"\n");
+	puts("\nSoC - RiscV project UNAL 2021-2-- CPU testing software built "__DATE__" "__TIME__"\n");
 	help();
 	prompt();
 

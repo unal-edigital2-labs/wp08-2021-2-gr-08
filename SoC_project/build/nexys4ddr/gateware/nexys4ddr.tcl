@@ -20,6 +20,7 @@ read_verilog {/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project
 read_verilog {/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/module/verilog/ultrasonido/maquinadeestados.v}
 read_verilog {/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/module/verilog/ultrasonido/meultrasonido.v}
 read_verilog {/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/module/verilog/ultrasonido/ultrasonido.v}
+read_verilog {/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/module/verilog/Motor.v}
 read_verilog {/home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
 
 # Add EDIFs
