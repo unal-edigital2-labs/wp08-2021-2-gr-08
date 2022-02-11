@@ -2,7 +2,7 @@
 
 ## Radar
 
-Para esta sección se tienen en cuenta dos funciones pwm test() y ultra_test(). En la función del pwm se controla el movimiento del servo motor dandole diferentes valores a duty y en función de esto el servomotor apuntara en un ángulo diferente. 
+Para esta sección se tienen en cuenta dos funciones pwm test() y ultra_test(). En la función del pwm se controla el movimiento del servo motor dandole diferentes valores a duty y en función de esto el servomotor apuntara en un ángulo diferente.
 
 ```c
 static void pwm_test(void)
@@ -37,7 +37,6 @@ static void pwm_test(void)
 
 Por otro lado en la funciónn ultra_test(), el valor de la variable orden es la que define si se mide una distancia, en la variable distancia se almacena el valor tomado por el sensor y finalmente done indica cuando termino el proceso.
 
-
 ```c
 
 static void ultra_test(void)
@@ -45,7 +44,7 @@ static void ultra_test(void)
 
     unsigned int orden = 0;
     unsigned int distancia = 0;
-    unsigned int done = 0; 
+    unsigned int done = 0;
 
     ultra_cntrl_orden_write(orden);
     printf("Test de ultrasonido ... se interrumpe con el boton 1\n");
@@ -110,4 +109,61 @@ int camara(void){
 	return col;
 
 }
+```
+
+## Sensor infrarrojo
+
+En esta función se leen los valores entregados por el infrarrojo, el cual tiene 5 sensores, representados a través de un arreglo de 5 bits, los cuales se leen con la función infra_cntrl_infras2_read y luego se imprime para saber su valor.
+
+```c
+static void infra_test(void){
+	printf("Test de infra ... se interrumpe con el boton 1\n");
+	while(!(buttons_in_read()&1)) {
+		printf("Infrarrojo: %lu \n",infra_cntrl_infras2_read());
+		delay_ms(1000);
+		}
+
+}
+
+```
+
+## Motores
+
+Para los motores hicimos uso de un puente H para poder controlar el encendido y apagado de cada motor, así como poder implementarle una potencia distinta. Para ello creamos 4 funciones para poder revisar las cuatro posibles estados, adelante, atras, giro izquierda y giro derechar, los cuales son interpretados por el puente H a través de un codigo binario, el cual enviamos por medio de la función motor_cntrl_estado_write.
+
+```c
+static void adelante(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(12); // 1 derecha adelante
+	}
+}
+
+static void derecha(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(10); // 1 derecha adelante
+	}
+}
+
+static void izquierda(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(9); // 1 derecha adelante
+	}
+}
+
+static void atras(void)
+{
+    printf("Test del motor... se interrumpe con el botton 1\n");
+        while(!(buttons_in_read()&1)) {
+	motor_cntrl_estado_write(3); // 1 derecha adelante
+
+	}
+}
+
+
 ```
