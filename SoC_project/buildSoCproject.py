@@ -13,6 +13,7 @@ from litex.soc.interconnect.csr import *
 from litex.soc.integration.soc import *
 
 from litex.soc.cores import gpio
+from litex.soc.cores import uart
 from module import rgbled
 from module import sevensegment
 from module import vgacontroller
@@ -112,6 +113,54 @@ class BaseSoC(SoCCore):
 		vga_green = Cat(*[platform.request("vga_green", i) for i in range(4)])
 		vga_blue = Cat(*[platform.request("vga_blue", i) for i in range(4)])
 		self.submodules.vga_cntrl = vgacontroller.VGAcontroller(platform.request("hsync"),platform.request("vsync"), vga_red, vga_green, vga_blue)
+
+		# UART_1
+
+		self.submodules.uart1_phy = uart.UARTPHY(
+			pads=platform.request("uart1"),
+			clk_freq=self.sys_clk_freq,
+			baudrate=9600)
+		self.submodules.uart1 = ResetInserter()(uart.UART(self.uart1_phy,
+														  tx_fifo_depth=16,
+														  rx_fifo_depth=16))
+		self.csr.add("uart1_phy", use_loc_if_exists=True)
+		self.csr.add("uart1", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart1", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+		# UART_2
+
+		self.submodules.uart2_phy = uart.UARTPHY(
+			pads=platform.request("uart2"),
+			clk_freq=self.sys_clk_freq,
+			baudrate=9600)
+		self.submodules.uart2 = ResetInserter()(uart.UART(self.uart2_phy,
+														  tx_fifo_depth=16,
+														  rx_fifo_depth=16))
+		self.csr.add("uart2_phy", use_loc_if_exists=True)
+		self.csr.add("uart2", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart2", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
+
+		# UART_3
+
+		self.submodules.uart3_phy = uart.UARTPHY(
+			pads=platform.request("uart3"),
+			clk_freq=self.sys_clk_freq,
+			baudrate=9600)
+		self.submodules.uart3 = ResetInserter()(uart.UART(self.uart3_phy,
+														  tx_fifo_depth=16,
+														  rx_fifo_depth=16))
+		self.csr.add("uart3_phy", use_loc_if_exists=True)
+		self.csr.add("uart3", use_loc_if_exists=True)
+		if hasattr(self.cpu, "interrupt"):
+			self.irq.add("uart3", use_loc_if_exists=True)
+		else:
+			self.add_constant("UART_POLLING")
 
 # Build --------------------------------------------------------------------------------------------
 if __name__ == "__main__":
