@@ -1,6 +1,10 @@
 # Radar 
 El periferico consta de dos partes, el sensor ultrasonico HC-SR04 y el servomotor. Lo que se busca es que el servomotor gire de tal manera que el sensor ultrasonico a punte en tres direcciones, adelante, izquierda y derecha y al momento en que el servo motor este apuntando en alguna de las direcciones mencionadas el sensor ultrasonico tome una muestra dodnde se mida la distancia de la pared que el robo tienen en esa dirección, con el objeivo que con esa informacion el robot sea capaz de de moverse sin chocar.
 
+<p align="center">
+  <img src="/Imagenes/ultras.jpeg" align="center">
+</p>
+
 ## Ultrasonido
 
 Tomando como guía el trabajo realizado por el grupo 4 del 2021-I se tienen dos modulos principales para el funcionamiento del sensor de ultrasonido "controlador.v" y "genpulsos.v" con los cuales se va a poder realizar el envio de pulsos y el calculo de la distancia del obstaculo.
@@ -64,14 +68,9 @@ module contador		(
 endmodule
 ```
 
-### Para[genpulsos.v](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/blob/main/SoC_project/module/verilog/ultrasonido/genpulsos.v)
+### Para [genpulsos.v](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/blob/main/SoC_project/module/verilog/ultrasonido/genpulsos.v)
 
 Este módulo tiene como propósito indicarle al sensor cuando genere una señal PWM, la cual será la señal trigg, emitiendo asi las ondas que rebotaran en los obstaculos próximos del robot, teniendo asi la informacion para medir la distancia.Este proceso lo describe el siguiente código.
-
-<p align="center">
-  <img src="/Imagenes/PWM_ultra.PNG" align="center">
-</p>
-
 
 El código utilizado para realizar este proceso es el siguiente:
 
