@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Thu Feb 10 21:04:17 2022
+| Date         : Fri Feb 11 15:54:21 2022
 | Host         : Afrodri-HP-Linux running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
 | Design       : nexys4ddr
@@ -21,8 +21,8 @@ Table of Contents
 +-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |        Instance       |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| nexys4ddr             |             (top) |       3411 |       3307 |     104 |    0 | 2757 |    134 |      0 |            1 |
-|   (nexys4ddr)         |             (top) |        895 |        879 |      16 |    0 | 1516 |    134 |      0 |            1 |
+| nexys4ddr             |             (top) |       3733 |       3581 |     152 |    0 | 3224 |    134 |      0 |            1 |
+|   (nexys4ddr)         |             (top) |       1153 |       1089 |      64 |    0 | 1981 |    134 |      0 |            1 |
 |   Motor               |             Motor |          2 |          2 |       0 |    0 |    4 |      0 |      0 |            0 |
 |   bloqueultrasonido   | bloqueultrasonido |         54 |         54 |       0 |    0 |   79 |      0 |      0 |            0 |
 |     maquinadeestados0 |  maquinadeestados |          6 |          6 |       0 |    0 |   15 |      0 |      0 |            0 |
@@ -35,10 +35,10 @@ Table of Contents
 |       divisorfrecd0   |      divisorfrecd |         15 |         15 |       0 |    0 |   12 |      0 |      0 |            0 |
 |       divisorfrecgen0 |    divisorfrecgen |         15 |         15 |       0 |    0 |   11 |      0 |      0 |            0 |
 |       genpulsos0      |         genpulsos |          2 |          2 |       0 |    0 |    2 |      0 |      0 |            0 |
-|   picorv32            |          picorv32 |       2428 |       2340 |      88 |    0 | 1129 |      0 |      0 |            0 |
-|     (picorv32)        |          picorv32 |       1709 |       1621 |      88 |    0 |  674 |      0 |      0 |            0 |
+|   picorv32            |          picorv32 |       2491 |       2403 |      88 |    0 | 1131 |      0 |      0 |            0 |
+|     (picorv32)        |          picorv32 |       1771 |       1683 |      88 |    0 |  676 |      0 |      0 |            0 |
 |     pcpi_div          | picorv32_pcpi_div |        388 |        388 |       0 |    0 |  200 |      0 |      0 |            0 |
-|     pcpi_mul          | picorv32_pcpi_mul |        331 |        331 |       0 |    0 |  255 |      0 |      0 |            0 |
+|     pcpi_mul          | picorv32_pcpi_mul |        333 |        333 |       0 |    0 |  255 |      0 |      0 |            0 |
 |   pwm_1               |               pwm |         33 |         33 |       0 |    0 |   29 |      0 |      0 |            0 |
 +-----------------------+-------------------+------------+------------+---------+------+------+--------+--------+--------------+
 * Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining

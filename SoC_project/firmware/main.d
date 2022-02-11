@@ -30,7 +30,8 @@ main.o: main.c \
  /home/afrodri/Documents/Digital_II/WP08_Proyecto_Final/SoC_project/build/nexys4ddr/software/include/generated/soc.h \
  /opt/litex/litex/litex/soc/software/include/hw/common.h \
  /opt/litex/litex/litex/soc/software/libbase/uart.h \
- /opt/litex/litex/litex/soc/software/libbase/console.h delay.h display.h
+ /opt/litex/litex/litex/soc/software/libbase/console.h delay.h display.h \
+ uart1.h uart2.h uart3.h
 
 /opt/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h:
 
@@ -99,3 +100,9 @@ main.o: main.c \
 delay.h:
 
 display.h:
+
+uart1.h:
+
+uart2.h:
+
+uart3.h:

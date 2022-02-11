@@ -13,6 +13,18 @@
 #include "uart2.h"
 #include "uart3.h"
 
+# define Start_Byte 0x7E
+# define Version_Byte 0xFF
+# define Command_Length 0x06
+# define End_Byte 0xEF
+# define Acknowledge 0x00
+
+#define LOWBYTE(v)   ((unsigned char) (v))
+#define HIGHBYTE(v)  ((unsigned char) (((unsigned int) (v)) >> 8))
+
+unsigned int matriz[6][7];
+unsigned int color[3];
+
 static char *readstr(void)
 {
 	char c[2];
@@ -168,8 +180,9 @@ static void uart1_test(void){
 	printf("se interrumpe con el botton 1\n");
 	unsigned int matriz[2][2]={{1,2},{3,4}};
 	unsigned int dato = 0;
+	uart1_write(97);
 	while(!(buttons_in_read()&1)) {
-
+	
 	dato = uart1_read();
 	if(dato == 97)
 	printf("listo\n");
@@ -382,6 +395,8 @@ static void console_service(void)
 		derecha();
 	else if(strcmp(token, "atras") == 0)
 		atras();
+	else if(strcmp(token, "uart") == 0)
+		uart1_test();
 	prompt();
 }
 

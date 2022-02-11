@@ -293,6 +293,30 @@ set_property IOSTANDARD LVCMOS33 [get_ports {hsync}]
 set_property LOC B12 [get_ports {vsync}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vsync}]
 
+# uart1:0.tx
+set_property LOC G6 [get_ports {uart1_tx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart1_tx}]
+
+# uart1:0.rx
+set_property LOC E6 [get_ports {uart1_rx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart1_rx}]
+
+# uart2:0.tx
+set_property LOC G16 [get_ports {uart2_tx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart2_tx}]
+
+# uart2:0.rx
+set_property LOC H14 [get_ports {uart2_rx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart2_rx}]
+
+# uart3:0.tx
+set_property LOC H1 [get_ports {uart3_tx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart3_tx}]
+
+# uart3:0.rx
+set_property LOC G1 [get_ports {uart3_rx}]
+set_property IOSTANDARD LVCMOS33 [get_ports {uart3_rx}]
+
 ################################################################################
 # Design constraints
 ################################################################################
