@@ -81,11 +81,16 @@ static void help(void)
 	puts("pwm                             - pwm test");
 	puts("ultra                           - ultra test");
 	puts("infra			       - infra test");
+<<<<<<< HEAD
 	puts("motor			       - motor test");
 	puts("adelante			       - adelante");
 	puts("atras			       - atras");
 	puts("derecha			       - girar derecha");
 	puts("izquierda			       - girar izquierda");
+=======
+	puts("camara			       - camara test");
+
+>>>>>>> 4bc95eedbb682e90fee6228be29592ca910f6fd9
 }
 
 static void reboot(void)
@@ -332,7 +337,42 @@ static void rgbled_test(void)
 
 
 }
+int camara(void){
 
+	unsigned int col = 0;
+	unsigned int done = 0;
+	unsigned int error = 0;
+
+	printf("Test de camara ... se interrumpe con el boton 1\n");
+
+		col = camara_cntrl_res_read();
+		done = camara_cntrl_done_read();
+		error = camara_cntrl_error_read();
+		if(done){
+			if(!error){
+				switch (col){
+	 				case 1: printf("Azul \n"); break;
+	 				case 2: printf("Verde \n"); break;
+	 				case 4: printf("Rojo \n"); break;
+	 				case 7: printf("Ninguno \n"); break;
+				}
+			}
+		}
+	camara_cntrl_init_write(1);
+	delay_ms(10);
+	camara_cntrl_init_write(0);
+	delay_ms(1000);
+
+	return col;
+
+}
+
+static void camara_test(){
+unsigned int c = camara();
+delay_ms(10);
+uart3_write(c);
+
+}
 
 static void vga_test(void)
 {
@@ -373,13 +413,22 @@ static void console_service(void)
 		display_test();
 	else if(strcmp(token, "rgbled") == 0)
 		rgbled_test();
+	else if(strcmp(token, "camara") == 0)
+		camara();
 	else if(strcmp(token, "vga") == 0)
 		vga_test();
 	else if(strcmp(token, "pwm") == 0)
+<<<<<<< HEAD
         	pwm_test();
 	else if(strcmp(token, "ultra") == 0)
          	ultra_test();
 	else if(strcmp(token, "infra") == 0)
+=======
+        pwm_test();
+    else if(strcmp(token, "ultra") == 0)
+        ultra_test();
+    else if(strcmp(token, "infra") == 0)
+>>>>>>> 4bc95eedbb682e90fee6228be29592ca910f6fd9
 	 	infra_test();
 	else if(strcmp(token, "adelante") == 0)
 	 	adelante();

@@ -64,6 +64,21 @@ _io = [
     ("btnr", 0, Pins("M17"), IOStandard("LVCMOS33")),
     ("btnl", 0, Pins("P17"), IOStandard("LVCMOS33")),
 
+    #CAMARA JB 
+    ("CAM_xclk", 0, Pins("D14"), IOStandard("LVCMOS33")),
+    ("CAM_pclk", 0, Pins("E16"), IOStandard("LVCMOS33")),
+    ("CAM_href", 0, Pins("F16"), IOStandard("LVCMOS33")),
+    ("CAM_vsync", 0, Pins("F13"), IOStandard("LVCMOS33")),
+    #CAMARA JA 
+    ("CAM_px_data", 0, Pins("C17"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 1, Pins("D17"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 2, Pins("D18"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 3, Pins("E17"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 4, Pins("E18"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 5, Pins("F18"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 6, Pins("G17"), IOStandard("LVCMOS33")),
+    ("CAM_px_data", 7, Pins("G18"), IOStandard("LVCMOS33")),
+
     ("ledRGB", 1,
         Subsignal("r", Pins("N15")),
         Subsignal("g", Pins("M16")),
@@ -93,6 +108,7 @@ _io = [
     ("display_segment", 6, Pins("L18"), IOStandard("LVCMOS33")),
     ("display_segment", 7, Pins("H15"), IOStandard("LVCMOS33")),
     
+
   	
     ("vga_red", 0, Pins("A3"), IOStandard("LVCMOS33")),
     ("vga_red", 1, Pins("B4"), IOStandard("LVCMOS33")),
@@ -172,6 +188,9 @@ class Platform(XilinxPlatform):
     def __init__(self):
         XilinxPlatform.__init__(self, "xc7a100t-CSG324-1", _io, toolchain="vivado")
         self.add_platform_command("set_property INTERNAL_VREF 0.750 [get_iobanks 34]")
+        self.add_platform_command("set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_pclk]")
+        self.add_platform_command("set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_href]")
+        self.add_platform_command("set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_vsync]")
 
     def create_programmer(self):
         return VivadoProgrammer()
