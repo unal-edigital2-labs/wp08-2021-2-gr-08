@@ -167,3 +167,28 @@ static void atras(void)
 
 
 ```
+
+## UART
+
+Se crearon 2 canales de comunicación UART para realizar la comunicación con el dispositivo bluethoot, el cual para poder probarlo usamos un test poniendo el tx y el rx en corto, así se escribe un dato y se espera que de salida sea el mismo dato.
+
+```c
+static void uart1_test(void){
+	printf("Test de la uart 1, debe poner en corto el pon RX Tx de la la UART1.\n");
+
+	printf("se envia el caracter A por la uart 1  y al estar en loopback se recibe el caracter  y se retrasmite por la uart 0\n");
+	printf("se interrumpe con el botton 1\n");
+	unsigned int matriz[2][2]={{1,2},{3,4}};
+	unsigned int dato = 0;
+	uart1_write(97);
+	while(!(buttons_in_read()&1)) {
+
+	dato = uart1_read();
+	if(dato == 97)
+	printf("listo\n");
+	else printf("no listo\n");
+	delay_ms(500);
+	}
+}
+
+```
