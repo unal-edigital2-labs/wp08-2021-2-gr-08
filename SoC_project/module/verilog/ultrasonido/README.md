@@ -115,5 +115,10 @@ module	genpulsos	(
 	//assign	sign=ECHO;
 endmodule
 ```
+El mapa de memoria correpondiente es el siguiente
+
+<p align="center">
+  <img src="/Imagenes/ultrasmap.png" align="center">
+</p>
 
  

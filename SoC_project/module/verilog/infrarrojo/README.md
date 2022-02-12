@@ -20,4 +20,9 @@ Como se puede ver en el código, la descripción es muy sencilla ya ue solo se i
 
     endmodule
 ```
+El mapa de memoria correpondiente es el siguiente
+
+<p align="center">
+  <img src="/Imagenes/irmap.png" align="center">
+</p>
 

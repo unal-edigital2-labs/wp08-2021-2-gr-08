@@ -35,4 +35,9 @@ Para el funcionamiendo del servomotor requiere de un ciclo util de una señal PW
 
 	endmodule
 ```
- 
+ El mapa de memoria correpondiente es el siguiente
+
+<p align="center">
+  <img src="/Imagenes/pwmmap.png" align="center">
+</p>
+

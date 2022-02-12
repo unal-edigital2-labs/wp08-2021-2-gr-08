@@ -34,6 +34,11 @@ Teniendo en cuenta la anterior tabla se desarrollo el módulo Motor.v que cumple
             pin = 4'b0000;
           endcase
       end
-  ```
+```
       
-El funcionamiento del módulo se basa en que según el valor de la señal de entrada **estado** se establecen los valores de los 4 pines de salida siguiendo la tabla descrita anteriormente para que los motores realicen la acción deseada. 
+
+El mapa de memoria correpondiente es el siguiente
+
+<p align="center">
+  <img src="/Imagenes/motormap.png" align="center">
+</p>
