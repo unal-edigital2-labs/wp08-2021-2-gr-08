@@ -25,7 +25,7 @@ A continuación se presenta una lista de los periféricos que fueron empleados e
 En el siguiente diagrama se puede ver como se conectan los perifereicos y sus correspondientes modulos con el puente Wishbone y a su vez como se hace la conexión del mismo con el procesador y la memoria.
 
 <p align="center">
-  <img src="/Imagenes/esquema1.png" align="center">
+  <img src="/Imagenes/esquema.png" align="center">
 </p>
 
 Para este diagrama, realizamos la asignación de memoria, la cual se encuentra detallado en Soc_MemoryMap.csv, y en la siguiente imagen se encuentra la base de memoria para cada periferico.
