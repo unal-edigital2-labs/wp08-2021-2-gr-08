@@ -17,7 +17,8 @@ A continuación se mostrará el proyecto de un robot diseñado en base a una arq
 
 A continuación se presenta una lista de los periféricos que fueron empleados en el desarrollo de este proyecto. Para más información acerca de cada periférico y de su implementación dar click sobre el periférico.
 
-- [Radar](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/ultrasonido)
+- [Ultrasonido](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/ultrasonido)
+- [PWM](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/pwm)
 - [Infrarrojo](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/infrarrojo)
 - [Motores](https://github.com/unal-edigital2-labs/wp08-2021-2-gr-08/tree/main/SoC_project/module/verilog/motor)
 

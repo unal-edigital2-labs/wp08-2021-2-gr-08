@@ -9,15 +9,14 @@ El puente H, según los valores de sus entradas, permite que el robot avance, gi
 
  | Acción | S1 | S2 | S3 | S4 |
 | ------------- | ------------- | ------------- |------------- |------------- |
-| Avance | 0 | 1 | 1 | 0 |
-| Retroceso | 1 | 0 | 0 | 1 |
+| Avance | 1 | 1 | 0 | 0 |
+| Retroceso | 0| 0 | 1 | 1 |
 | Giro Derecha | 1 | 0 | 1 | 0 |
-| Giro Izquierda | 0 | 1 | 0 | 1 |
-| Pausa | 0 | 0 | 0 | 0 | 
+| Giro Izquierda | 1 | 0 | 0 | 1 |
 
 
 
-Teniendo en cuenta la anterior tabla se desarrollo el módulo [Motor.v](/Soc_project/module/verilog/Motor.v) que cumple la función de driver para los motores. El código utilizado para la realización del módulo es el siguiente:
+Teniendo en cuenta la anterior tabla se desarrollo el módulo Motor.v que cumple la función de driver para los motores. El código utilizado para la realización del módulo es el siguiente:
 
 ```verilog
     parameter AVANCE=2, RETROCESO=1, PAUSA=0, GIROD=3, GIROI=4;
